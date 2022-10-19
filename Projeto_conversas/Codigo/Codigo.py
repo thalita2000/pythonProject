@@ -3,8 +3,25 @@ from datetime import datetime
 from tkinter import ttk
 
 root = Tk()
+class janela2():
 
-class principal():
+
+    def pesquisar(self):
+
+        self.root2 = Toplevel()
+
+        self.root2.configure(background='#00aa88')
+        self.root2.geometry('890x376+150+290')
+
+        self.widgets2()
+
+    def widgets2(self):
+        self.lb_codigo = Label(self.root2, text='Digita o código:', bg='#00aa88', fg='white', font=('arial', 10, 'bold'))
+        self.lb_codigo.place(x=30, y=10)
+
+
+
+class principal(janela2):
     def __init__(self):
         self.root = root
         self.tela()
@@ -56,13 +73,13 @@ class principal():
         #self.lupa1.image = self.enviar
 
         self.enviar = Button(self.root, text='ENVIAR', bg='#008888', fg='white', font=('arial', 20, 'bold'), command='')
-        self.enviar.place(x=200, y=650)
+        self.enviar.place(x=200, y=550)
 
-        self.pesquisar = Button(self.root, text='PESQUISAR', bg='#008888', fg='white', font=('arial', 20, 'bold'), command='')
-        self.pesquisar.place(x=500, y=650)
+        self.pesquisar = Button(self.root, text='PESQUISAR', bg='#008888', fg='white', font=('arial', 20, 'bold'), command=self.pesquisar)
+        self.pesquisar.place(x=520, y=550)
 
         self.pesquisar = Button(self.root, text='LIMPAR', bg='#008888', fg='white', font=('arial', 20, 'bold'), command='')
-        self.pesquisar.place(x=850, y=650)
+        self.pesquisar.place(x=900, y=550)
 
     def etiquetas(self):
         self.etiquetas1 = Label(self.root, text='DATA', bg='#008888', fg='yellow', font=('arial', 20, 'bold'))
